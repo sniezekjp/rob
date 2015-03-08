@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rob's app</title>
+
+	<link rel="stylesheet" href="app/vendor/foundation/css/normalize.css">
+	<link rel="stylesheet" href="app/vendor/foundation/css/foundation.css">
+	
+	<script src="app/vendor/jquery/dist/jquery.js"></script>
+	<script src="app/vendor/angular/angular.js"></script>
+	<script src="app/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+	
+	<script src="app/app.js"></script>
+	<script src="app/account/services/AccountService.js"></script>
+	<script src="app/account/controllers/AccountController.js"></script>
+
+</head>
+<body>
+
+	<nav class="top-bar" data-topbar role="navigation">
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#">My Site</a></h1>
+	    </li>
+	  </ul>
+
+		<section class="top-bar-section">
+		    <ul class="left">
+		      <li><a href="" ui-sref="accounts.list">Accounts</a></li>
+		    </ul>
+	    </section>
+	</nav>
+
+	<div ui-view></div>
+	
+	<script src="app/bootstrap.js"></script>
+	<script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>

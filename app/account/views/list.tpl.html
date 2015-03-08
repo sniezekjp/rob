@@ -1,0 +1,21 @@
+<div class="row" style="margin-top: 40px;">
+	<table class="columns medium-12">
+	  <thead>
+	  	<tr>
+	    	<th>ID</th>
+	    	<th>Account Name</th>
+	    	<th>Actions</th>
+	  	</tr>
+	  </thead>
+	  <tbody>
+		<tr ng-repeat="account in accounts | filter:filterDeleted">
+			<td>{{account.id}}</td>
+			<td>{{account.name}}</td>
+			<td>
+				<a href="" ng-click="edit(account)">Edit</a>  |  
+				<a href="" ng-click="delete(account)">Delete</a>
+			</td>
+		</tr>
+	  </tbody>
+	</table>
+</div>
