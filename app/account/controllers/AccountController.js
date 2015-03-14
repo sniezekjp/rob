@@ -5,7 +5,7 @@ angular.module('app')
 	$scope.account = {};
 
 	$scope.getAccounts = function() {
-		AccountService.list().success(function(res) {
+		AccountService.getAll().success(function(res) {
 			$scope.accounts = res;
 		});
 	};
@@ -31,6 +31,11 @@ angular.module('app')
 			$scope.sendingRequest = false;
 		});
 	};
+
+	$scope.save = function(account) {
+    var action = account.id ? "update" : "create";
+    $scope[action](account);
+  };
 
 	$scope.edit = function(account) {
 		$scope.account = account;

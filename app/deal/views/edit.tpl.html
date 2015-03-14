@@ -1,0 +1,74 @@
+<div class="new" style="margin-top: 40px;">
+  <form ng-submit="save(deal)" class="row">
+    
+    <div class="columns medium-12">
+      <label>
+        Launching Date
+        <input type="date" ng-model="deal.launchingDate" placeholder="Launching date"/>
+      </label>
+    </div>
+
+    <div class="columns medium-12">
+      <label>
+        Pricing Date
+        <input type="date" ng-model="deal.pricingDate" placeholder="Pricing date"/>
+      </label>
+    </div>
+  
+    <div class="columns medium-12">
+      <label>
+        Issuer Name
+        <input type="text" ng-model="deal.name" placeholder="Issuer name">
+      </label>
+    </div>
+    
+    <div class="columns medium-12">
+      <label>
+        Deal Type
+        <select ng-model="deal.type">
+          <option value="">--Select Deal Type--</option>
+          <option value="IPO">Initial Public Offering</option>
+          <option value="FO">Follow-On</option>
+          <option value="144A">144A</option>
+        </select>
+      </label>
+    </div>
+    
+    <div class="columns medium-6">
+      <label>
+        Filing Range Low
+        <input type="number" ng-model="deal.rangeLow" placeholder="Filing Range Low">
+      </label>
+    </div>
+
+    <div class="columns medium-6">
+      <label>
+        Filing Range High
+        <input type="number" ng-model="deal.rangeHigh" placeholder="Filing Range High">
+      </label>
+    </div>
+
+    <div class="columns medium-12">
+      <label>
+        Shares offered
+        <input type="number" ng-model="deal.sharesOffered" placeholder="Shares offered">
+      </label>
+    </div>
+
+    <div class="columns medium-12">
+      <label>
+        Status
+        <select ng-model="deal.status">
+          <option value="">--Status--</option>
+          <option value="expected">Expected to Launch</option>
+          <option value="live">Live</option>
+          <option value="withdrawn">Withdrawn/Postponed</option>
+          <option value="completed">Completed</option>
+        </select>
+      </label>
+    </div>    
+    
+    <input type="submit" class="button button-small right"
+    ng-attr-value="{{ !sendingRequest ? 'Save' : 'Saving' }}">
+  </form>
+</div>

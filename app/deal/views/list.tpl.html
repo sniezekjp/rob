@@ -1,0 +1,33 @@
+<div class="row" style="margin-top: 40px;">
+  <table class="columns medium-12">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Launcing Date</th>
+        <th>Pricing Date</th>
+        <th>Deal Name</th>
+        <th>Type</th>
+        <th>Range</th>
+        <th>Offer Price</th>
+        <th>Shares Offered</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="deal in deals | filter:filterDeleted">
+      <td>{{deal.status}}</td>
+      <td>{{deal.launchingDate | date:medium}}</td>
+      <td>{{deal.pricingDate | date:medium}}</td>
+      <td>{{deal.name}}</td>
+      <td>{{deal.type}}</td>
+      <td>{{deal.rangeLow|currency}} - {{deal.rangeHigh | currency}}</td>
+      <td>{{ average(deal) | currency}}</td>
+      <td>{{deal.sharesOffered | number}}</td>
+      <td>
+        <a href="" ng-click="edit(deal)">Edit</a>  |  
+        <a href="" ng-click="delete(deal)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

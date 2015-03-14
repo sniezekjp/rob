@@ -10,10 +10,22 @@
 	<script src="app/vendor/jquery/dist/jquery.js"></script>
 	<script src="app/vendor/angular/angular.js"></script>
 	<script src="app/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="app/vendor/papaparse/papaparse.js"></script>
 	
 	<script src="app/app.js"></script>
+
+	<script src="app/account/app.js"></script>
 	<script src="app/account/services/AccountService.js"></script>
 	<script src="app/account/controllers/AccountController.js"></script>
+
+	<script src="app/deal/app.js"></script>
+	<script src="app/deal/services/DealService.js"></script>
+	<script src="app/deal/controllers/DealController.js"></script>
+
+	<script src="app/import/app.js"></script>
+	<script src="app/import/directives/importFile.js"></script>
+	<script src="app/import/services/ImportService.js"></script>
+	<script src="app/import/controllers/ImportController.js"></script>
 
 </head>
 <body>
@@ -28,6 +40,8 @@
 		<section class="top-bar-section">
 		    <ul class="left">
 		      <li><a href="" ui-sref="accounts.list">Accounts</a></li>
+		      <li><a href="" ui-sref="deals.list">Deals</a></li>
+		      <li><a href="" ui-sref="import">Import</a></li>
 		    </ul>
 	    </section>
 	</nav>

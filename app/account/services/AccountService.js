@@ -1,8 +1,6 @@
 angular.module('app')
 .factory('AccountService', function(ENV, $http) {
-	
 	var prefix = '/account';
-
 	return {
 		create: function(account) {
 			return $http.post(ENV.apiUrl + prefix, account); 
@@ -26,6 +24,10 @@ angular.module('app')
 
 		destroy: function(id) {
 			return $http.delete(ENV.apiUrl + prefix + '/' + id);
+		},
+
+		import: function(file) {
+			return $http.post(ENV.apiUrl + prefix + '/import', file);
 		}
 	};
 });
