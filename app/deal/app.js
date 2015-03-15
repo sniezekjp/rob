@@ -9,11 +9,6 @@ app.config(function($stateProvider) {
     templateUrl: 'app/deal/views/deals.tpl.html'
   });
 
-  $stateProvider.state('deals.list', {
-    url: '/list',
-    templateUrl: 'app/deal/views/list.tpl.html'
-  }); 
-
   $stateProvider.state('deals.new', {
     url: '/new',
     templateUrl: 'app/deal/views/edit.tpl.html'

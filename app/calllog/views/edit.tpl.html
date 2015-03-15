@@ -1,0 +1,12 @@
+<div class="new" style="margin-top: 40px;">
+  <form ng-submit="save(calllog)">
+    
+    <input type="date" placeholder="Call date">
+    <input type="time" placeholder="Call time">
+    
+    
+
+    <input type="submit" class="button button-small right"
+    ng-attr-value="{{ !sendingRequest ? 'Save' : 'Saving' }}">
+  </form>
+</div>

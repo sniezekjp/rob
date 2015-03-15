@@ -21,7 +21,7 @@ angular.module('app')
   $scope.create = function(deal) {
     $scope.sendingRequest = true;
     DealService.create(deal).success(function() {
-      $state.go('^.list');
+      $state.go('^');
       $scope.getDeals();
       $scope.deal = {};
       $scope.sendingRequest = false;
@@ -31,7 +31,7 @@ angular.module('app')
   $scope.update = function(deal) {
     $scope.sendingRequest = true;
     DealService.update(deal.id, deal).success(function() {
-      $state.go('^.list');
+      $state.go('^');
       $scope.getAccounts();
       $scope.deal = {};
       $scope.sendingRequest = false;
@@ -45,7 +45,7 @@ angular.module('app')
 
   $scope.edit = function(deal) {
     $scope.deal = deal;
-    $state.go('^.edit');
+    $state.go('.edit');
   };
 
   $scope.delete = function(deal) {

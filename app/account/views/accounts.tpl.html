@@ -1,11 +1,41 @@
 <div class="row">
+
+	<h3>Formal Accounts</h3>
+	<a href="" ui-sref="accounts.new">New account</a>
 	
 	<div class="columns medium-12">
-		<h3>Accounts</h3>
-		<a href="" ui-sref="accounts.new">New account</a>
-	</div>
-	
-	<div class="columns medium-12">
-		<div ui-view></div>
+		<div ui-view>
+      <div class="row" style="margin-top: 40px;">
+        <a href="" ng-click="order='id'">ID</a>
+        <a href="" ng-click="order='name'">Name</a>
+        <a href="" ng-click="asc=!asc">Direction</a>
+        <a href="" ng-click="resetSelected()">All Brokers</a>
+        <select ng-model="selected.broker" ng-options="b as asBroker(b) for b in brokers"></select>
+        <form ng-submit="search(searchTerm.name)">
+          <input type="text" ng-model='searchTerm.name'>
+        </form>
+        <table class="columns medium-12">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Account Name</th>
+              <th>Broker ID</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="account in accounts | filter:filterDeleted | filter:searchTerm | filter:byBroker | orderBy:order:asc">
+            <td>{{account.id}}</td>
+            <td>{{account.name}}</td>
+            <td>{{account.broker.first}} {{account.broker.last}}</td>
+            <td>
+              <a href="" ng-click="edit(account)">Edit</a>  |  
+              <a href="" ng-click="delete(account)">Delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>      
+    </div>
 	</div>
 </div>

@@ -7,11 +7,6 @@ app.config(function($urlRouterProvider, $stateProvider) {
     url: '/accounts',
     controller: 'AccountController',
     templateUrl: 'app/account/views/accounts.tpl.html'
-  });
-
-  $stateProvider.state('accounts.list', {
-    url: '/list',
-    templateUrl: 'app/account/views/list.tpl.html'
   }); 
 
   $stateProvider.state('accounts.new', {
@@ -24,5 +19,5 @@ app.config(function($urlRouterProvider, $stateProvider) {
     templateUrl: 'app/account/views/edit.tpl.html'
   });
   
-  $urlRouterProvider.otherwise('/accounts/list');
+  $urlRouterProvider.otherwise('/accounts');
 });

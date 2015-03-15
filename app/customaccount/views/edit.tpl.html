@@ -1,0 +1,18 @@
+<div class="new" style="margin-top: 40px;">
+  <form>
+    <input type="text" ng-model="custom.name" placeholder="Custom Account name">
+    
+    <angucomplete id="formalAccounts"
+              placeholder="Search formal name"
+              pause="400"
+              selectedobject="data.selected"
+              url="{{url}}"
+              descriptionfield="name"
+              inputclass="form-control form-control-small"/>
+    
+    <input type="text" ng-model="data.selected.originalObject.name" ng-disabled="true">
+    
+    <input type="submit" class="button button-small right" ng-click="save(custom)"
+    ng-attr-value="{{ !sendingRequest ? 'Save' : 'Saving' }}">
+  </form>
+</div>

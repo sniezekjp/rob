@@ -1,0 +1,27 @@
+<div class="row">
+  <h3>Custom Accounts</h3>
+  <a href="" ui-sref=".new">New custom account</a>
+  <div ui-view>
+    <table class="columns medium-12" style="margin-top:40px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Custom Account Name</th>
+          <th>Formal Account</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="custom in customAccounts">
+        <td>{{custom.id}}</td>
+        <td>{{custom.name}}</td>
+        <td>{{custom.formal.name}}</td>
+        <td>
+          <a href="" ng-click="edit(custom)">Edit</a>  |  
+          <a href="" ng-click="delete(custom)">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

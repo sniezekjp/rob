@@ -1,0 +1,29 @@
+<div class="row">
+
+  <h3>Call Logs</h3>
+  <a href="" ui-sref="calllog.new">New call log</a>
+  
+  <div class="columns medium-12">
+    <div ui-view>
+      <div class="row" style="margin-top: 40px;">
+        <table class="columns medium-12">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="calllog in calllogs">
+            <td>{{calllog.id}}</td>
+            <td>
+              <a href="" ng-click="edit(calllog)">Edit</a>  |  
+              <a href="" ng-click="delete(calllog)">Delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>      
+    </div>
+  </div>
+</div>

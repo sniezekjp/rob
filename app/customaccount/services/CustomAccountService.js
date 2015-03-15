@@ -1,6 +1,6 @@
 angular.module('app')
-.factory('BrokerService', function(ENV, $http) {
-  var prefix = '/broker';
+.factory('CustomAccountService', function($http, ENV) {
+  var prefix = '/customaccount';
   return {
     create: function(account) {
       return $http.post(ENV.apiUrl + prefix, account); 
@@ -19,11 +19,7 @@ angular.module('app')
     },
     
     find: function(query) {
-
-    },
-
-    findAll: function() {
-      return $http.get(ENV.apiUrl + prefix + '?limit=100');
+      return $http.post(ENV.apiUrl + prefix + '/find', query);
     },
 
     destroy: function(id) {
@@ -32,6 +28,6 @@ angular.module('app')
 
     import: function(file) {
       return $http.post(ENV.apiUrl + prefix + '/import', file);
-    }
+    },
   };
 });

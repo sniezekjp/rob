@@ -19,7 +19,7 @@ angular.module('app')
 		},
 		
 		find: function(query) {
-
+			return $http.post(ENV.apiUrl + prefix + '/find', query);
 		},
 
 		destroy: function(id) {
@@ -28,6 +28,11 @@ angular.module('app')
 
 		import: function(file) {
 			return $http.post(ENV.apiUrl + prefix + '/import', file);
+		},
+
+		page: function(page) {
+			var skip = page * 30;
+			return $http.get(ENV.apiUrl + prefix + '?skip=' + skip);
 		}
 	};
 });

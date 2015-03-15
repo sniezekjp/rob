@@ -1,0 +1,5 @@
+<h3>Import Call Logs</h3>
+<form ng-submit="importCallLogs(content)">
+  <input type="file" import-file content="content">
+  <input type="submit" class="button" ng-attr-value="{{loading ? 'Uploading' : 'Import' }}">
+</form>
