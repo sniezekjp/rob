@@ -1,0 +1,42 @@
+<div class="row">
+
+	<h3>Roadshow</h3>
+
+  <h6>Launch date:</h6>
+	
+  <div class="columns medium-12">
+    <div ui-view>
+      <div class="row" style="margin-top: 40px;">
+        <table class="columns medium-12">
+          <thead>
+            <tr>
+              <th><a href="" ng-click="order='datetime'">Date/Time</a></th>
+              <th><a href="" ng-click="order='city'">City</a></th>
+              <th><a href="" ng-click="order='meetingType'">Meeting Type</a></th>
+              <th><a href="" ng-click="order='customAccount.name'">Account</a></th>
+              <th><a href="" ng-click="order='attendees'">Attendees</a></th>
+              <th><a href="" ng-click="order='broker'">Sales Rep</a></th>
+              <th><a href="" ng-click="order='salesCityCov'">Office</a></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="roadshow in roadshows | filter:filterDeleted | orderBy:order:asc">
+            <td>{{roadshow.datetime | date:'M/d/yy h:mm a'}}</td>
+            <td>{{roadshow.city}}</td>
+            <td>{{roadshow.meetingType}}</td>
+            <td>{{roadshow.customAccount.name}}</td>
+            <td>{{roadshow.attendees}}</td>
+            <td>{{roadshow.broker}}</td>
+            <td>{{roadshow.salesCityCoverage}}</td>
+            <td>
+              <a href="" ng-click="edit(roadshow)">Edit</a>  |  
+              <a href="" ng-click="delete(roadshow)">Delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>      
+    </div>
+  </div>
+</div>

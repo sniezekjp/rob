@@ -1,13 +1,13 @@
 angular.module('app')
-.factory('CallLogService', function($http, ENV) {
-  var prefix = '/calllog';
+.factory('RoadshowService', function($http, ENV) {
+  var prefix = '/roadshow';
   return {
-    create: function(calllog) {
-      return $http.post(ENV.apiUrl + prefix, calllog); 
+    create: function(roadshow) {
+      return $http.post(ENV.apiUrl + prefix, roadshow); 
     },
 
-    update: function(id, calllog) {
-      return $http.put(ENV.apiUrl + prefix + '/' + id, calllog);
+    update: function(id, roadshow) {
+      return $http.put(ENV.apiUrl + prefix + '/' + id, roadshow);
     },
     
     getAll: function() {
@@ -22,6 +22,7 @@ angular.module('app')
       return $http.post(ENV.apiUrl + prefix + '/find', query);
     },
 
+
     destroy: function(id) {
       return $http.delete(ENV.apiUrl + prefix + '/' + id);
     },
@@ -30,11 +31,5 @@ angular.module('app')
       console.log(content);
       return $http.post(ENV.apiUrl + prefix + '/import', content);
     }
-
-    // page: function(page) {
-    //   var skip = page * 30;
-    //   return $http.get(ENV.apiUrl + prefix + '?skip=' + skip);
-    // }
-
   };
 });

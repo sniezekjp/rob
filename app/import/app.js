@@ -15,4 +15,9 @@ angular.module('app')
     url: '/calllogs',
     templateUrl: 'app/import/views/imports/calllogs.tpl.html'
   });
+
+  $stateProvider.state('import.roadshow', {
+    url: '/roadshow',
+    templateUrl: 'app/import/views/imports/roadshow.tpl.html'
+  });
 });

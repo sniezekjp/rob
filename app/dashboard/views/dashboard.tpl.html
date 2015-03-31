@@ -1,0 +1,63 @@
+<div class="row">
+
+	<div class="columns medium-12">
+		<h3>Dashboard</h3>
+
+		<div ui-view>
+			<div class = "row">
+				<div class="three columns">
+					Sort by:
+					<a href="" ng-click="order='id'">ID</a> | 
+					<a href="" ng-click="order='name'">Name</a> |
+					<a href="" ng-click="asc=!asc">Direction</a>
+				</div>
+				
+				<div class="three columns">
+					Filter by broker: <a href="" ng-click="resetSelected()">All Brokers</a>  
+					<div class ="row">
+						<div class="ten columns">
+							<select ng-model="selected.broker" ng-options="b as asBroker(b) for b in brokers"></select>
+						</div>
+					</div>
+				</div>
+
+				<div class="three columns pull-three">
+				Search Account Name:
+					<div class="row">
+						<div class="ten columns">		
+							<form ng-submit="search(searchTerm.name)">
+								<input type="text" ng-model='searchTerm.name' placeholder="Enter Account Name">
+							</form>
+						</div>
+					</div>
+				</div>	
+			</div>
+
+			<table class="columns small-5">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Account Name</th>
+						<th>Broker ID</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="account in accounts | filter:filterDeleted | filter:searchTerm | filter:byBroker | orderBy:order:asc">
+					<h6 class="subheader">
+						<td>{{account.id}}</td>
+						<td>{{account.name}}</td>
+						<td>{{account.broker.first}} {{account.broker.last}}</td>
+						<td>
+							<a href="" ng-click="edit(account)">Edit</a>  |  
+							<a href="" ng-click="delete(account)">Delete</a>
+						</td>
+					</h6>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>

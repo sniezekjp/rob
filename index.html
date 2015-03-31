@@ -5,6 +5,7 @@
 	<title>Rob's app</title>
 
 	<link rel="stylesheet" href="app/vendor/foundation/css/normalize.css">
+	<link rel="stylesheet" href="foundation/stylesheets/foundation.css">
 	<link rel="stylesheet" href="app/vendor/foundation/css/foundation.css">
 	<link rel="stylesheet" href="app/vendor/angucomplete/angucomplete.css">
 	
@@ -15,6 +16,10 @@
 	<script src="app/vendor/angucomplete/angucomplete.js"></script>
 	
 	<script src="app/app.js"></script>
+
+	<script src="app/dashboard/app.js"></script>
+	<script src="app/dashboard/services/DashboardService.js"></script>
+	<script src="app/dashboard/controllers/DashboardController.js"></script>
 
 	<script src="app/account/app.js"></script>
 	<script src="app/account/services/AccountService.js"></script>
@@ -37,25 +42,31 @@
 	<script src="app/calllog/controllers/CallLogController.js"></script>
 	<script src="app/calllog/services/CallLogService.js"></script>
 
+	<script src="app/roadshow/app.js"></script>
+	<script src="app/roadshow/controllers/RoadshowController.js"></script>
+	<script src="app/roadshow/services/RoadshowService.js"></script>
+
 	<script src="app/broker/services/BrokerService.js"></script>
 
 </head>
 <body>
 
 	<nav class="top-bar" data-topbar role="navigation">
-	  <ul class="title-area">
+	  <ul class="title-area" style="margin-left: 125px;">
 	    <li class="name">
-	      <h1><a href="#">My Site</a></h1>
+	      <h1><a href="#">ECM db</a></h1>
 	    </li>
 	  </ul>
 
 		<section class="top-bar-section">
-		    <ul class="left">
+		    <ul class="nav navbar-nav">
+		      <li><a href="" ui-sref="dashboard">Dashboard</a></li>
+		      <li><a href="" ui-sref="deals">Deals</a></li>
 		      <li><a href="" ui-sref="accounts">Accounts</a></li>
 		      <li><a href="" ui-sref="custom">Custom Accounts</a></li>
-		      <li><a href="" ui-sref="deals">Deals</a></li>
-		      <li><a href="" ui-sref="import">Import</a></li>
 		      <li><a href="" ui-sref="calllog">Call Logs</a></li>
+		      <li><a href="" ui-sref="roadshow">Roadshow</a></li>
+		      <li><a href="" ui-sref="import">Import</a></li>
 		    </ul>
 	    </section>
 	</nav>

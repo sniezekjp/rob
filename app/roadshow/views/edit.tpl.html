@@ -1,0 +1,8 @@
+<div class="new" style="margin-top: 40px;">
+	<form ng-submit="save(account)">
+		<input type="text" ng-model="account.name" placeholder="Account name">
+    <select ng-model="account.broker" ng-options="b.id as asBroker(b) for b in brokers"></select>
+		<input type="submit" class="button button-small right"
+		ng-attr-value="{{ !sendingRequest ? 'Save' : 'Saving' }}">
+	</form>
+</div>
